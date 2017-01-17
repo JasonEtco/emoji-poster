@@ -38,6 +38,14 @@
 <body>
 
   <main class="wrapper"></main>
-  <script type="text/javascript" async src="emojis.js"></script>
+  <script type="text/javascript" src="emojis.js"></script>
+  <script>
+    const wrapper = document.querySelector('.wrapper');
+    for (const emoji in emojis) {
+      const emojiEl = document.createElement('div');
+      emojiEl.textContent = emojis[emoji];
+      wrapper.appendChild(emojiEl);
+    }
+  </script>
 </body>
 </html>

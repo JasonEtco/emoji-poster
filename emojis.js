@@ -1,7 +1,7 @@
 // Courtesy of this repo (with some modifications):
 // https://github.com/muan/emoji/blob/gh-pages/javascripts/emojilib/simplemap.json
 
-const simpleEmojis = {
+const emojis = {
   "100": "💯",
   "1234": "🔢",
   "grinning": "😀",
@@ -659,11 +659,4 @@ const simpleEmojis = {
   "hearts": "♥️",
   "diamonds": "♦️",
   "clock": "🕐",
-}
-
-const wrapper = document.querySelector('.wrapper');
-for (const emoji in simpleEmojis) {
-  const emojiEl = document.createElement('div');
-  emojiEl.textContent = simpleEmojis[emoji];
-  wrapper.appendChild(emojiEl);
 }
