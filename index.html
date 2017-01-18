@@ -29,7 +29,7 @@
       .wrapper {
         width: 19.75in;
         height: 27.5in;
-        font-size: 18pt;
+        font-size: 16pt;
         padding: 1em 2em 4em;
       }
     }
@@ -38,14 +38,6 @@
 <body>
 
   <main class="wrapper"></main>
-  <script type="text/javascript" src="emojis.js"></script>
-  <script>
-    const wrapper = document.querySelector('.wrapper');
-    for (const emoji in emojis) {
-      const emojiEl = document.createElement('div');
-      emojiEl.textContent = emojis[emoji];
-      wrapper.appendChild(emojiEl);
-    }
-  </script>
+  <script type="text/javascript" src="bundle.js"></script>
 </body>
 </html>
