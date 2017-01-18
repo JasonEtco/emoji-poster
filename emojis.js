@@ -1,6 +1,11 @@
 const emojis = require('emojilib');
 
 const wrapper = document.querySelector('.wrapper');
+function addEmoji(char) {
+  const emojiEl = document.createElement('div');
+  emojiEl.textContent = char;
+  wrapper.appendChild(emojiEl);
+}
 
 const brokenEmojis = [
   'copyright',
@@ -31,14 +36,19 @@ const brokenEmojis = [
   'bangbang',
 ];
 
-emojis.ordered.forEach(e => {
+const extraEmojis = [
+  '🐱👤','🐱🐉','🐱💻','🐱🏍','🐱👓', '🐱🚀'
+]
+
+emojis.ordered.forEach((e, i) => {
   const { char, category } = emojis.lib[e];
 
   if (brokenEmojis.indexOf(e) !== -1) return;
   if (category === 'flags') return;
-  if (char && (char.endsWith('♀️') || char.endsWith('♂️'))) return;
+  if (!char) return;
+  if (char.endsWith('♀️') || char.endsWith('♂️')) return;
 
-  const emojiEl = document.createElement('div');
-  emojiEl.textContent = char;
-  wrapper.appendChild(emojiEl);
+  addEmoji(char);
 });
+
+extraEmojis.forEach(e => addEmoji(e));
